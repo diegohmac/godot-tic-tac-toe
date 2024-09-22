@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmerkecjarfxl"]
 
-[ext_resource type="PackedScene" uid="uid://cyx88epsuh60v" path="res://cell.tscn" id="1_b54ns"]
+[ext_resource type="Script" path="res://main.gd" id="1_nt4kr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egilk"]
 
@@ -25,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nt4kr")
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,33 +43,6 @@ offset_bottom = 40.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
-
-[node name="Cell" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell2" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell3" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell4" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell5" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell6" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell7" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell8" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
-
-[node name="Cell9" parent="Cells" instance=ExtResource("1_b54ns")]
-layout_mode = 2
 
 [node name="RestartButton" type="Button" parent="."]
 layout_mode = 1
@@ -90,3 +64,5 @@ text = "Restart"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_earku")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
